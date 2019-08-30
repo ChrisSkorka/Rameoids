@@ -2,6 +2,9 @@ package info.chris.skorka;
 
 public class Entity {
 
+    // private static final boolean drawBoundaries = true;
+    public static boolean drawBoundaries = false;
+
     private Polygon polygons[];
     private Boundary boundary;
     public Boundary boundarySpace;
@@ -27,7 +30,25 @@ public class Entity {
         for(int i = 0; i < polygons.length; i++)
             boundaries[i] = new Boundary(polygons[i].vertices);
         boundary = new Boundary(boundaries);
-        circularBoundary = new CircularBoundary(boundary);
+
+//        int vertexCount = 0;
+//        for(Polygon p : polygons)
+//            vertexCount += p.vertices.length;
+//        Vertex[] vertices = new Vertex[vertexCount];
+//        vertexCount = 0;
+//        for(Polygon p : polygons){
+//            for(int i = 0; i < p.vertices.length; i++)
+//                vertices[vertexCount + i] = p.vertices[i];
+//
+//            vertexCount += p.vertices.length;
+//        }
+//
+//        circularBoundary = new CircularBoundary(vertices);
+
+        if(polygons.length == 1)
+            circularBoundary = new CircularBoundary(polygons[0].vertices);
+        else
+            circularBoundary = new CircularBoundary(boundary);
     }
 
     public void update(long t, long dt){
@@ -131,8 +152,32 @@ public class Entity {
 
         }
 
+//        c.fill(null);
+//        c.stroke(new Color(0x88FF0000L));
+//        c.rect(boundary.left(), boundary.bottom(), boundary.right(), boundary.top());
+//        c.stroke(new Color(0x8800ff00L));
+//        c.rect(circularBoundary.left(), circularBoundary.bottom(), circularBoundary.right(), circularBoundary.top());
+
         c.undoTransform();
         c.undoTransform();
+
+        if(drawBoundaries) {
+            Boundary b = getBoundary();
+            CircularBoundary a = getCircularBoundary();
+            c.fill(null);
+            c.stroke(new Color(0x88FF0000L));
+            c.rect(b.left(), b.bottom(), b.right(), b.top());
+            c.stroke(new Color(0x8800FF00L));
+            c.circle(new Vertex(this.x, this.y), a.radius());
+
+            c.stroke(new Color(0x8800FFFFL));
+            c.line(new Vertex(this.x, this.y), new Vertex(this.x+this.vx, this.y+this.vy));
+            c.stroke(new Color(0x88FF00FFL));
+            c.line(new Vertex(this.x, this.y), new Vertex(this.x+Math.sin(this.r)*this.a/10, this.y+Math.cos(this.r)*this.a/10));
+            c.stroke(new Color(0x88FFFF00L));
+            double v = Math.sqrt(this.vx*this.vx+this.vy*this.vy);
+            c.line(new Vertex(this.x, this.y), new Vertex(this.x-Math.sin(this.r)*this.d*v/50, this.y-Math.cos(this.r)*this.d*v/50));
+        }
     }
 
     public Boundary getBoundary(){

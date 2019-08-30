@@ -62,44 +62,25 @@ public class Context {
     }
 
 
-//    /**
-//     * Paints a rectangle with the fill and stroke colors.
-//     * @param x1 x coordinate of vertex 1
-//     * @param y1 y coordinate of vertex 1
-//     * @param x2 x coordinate of vertex 2
-//     * @param y2 y coordinate of vertex 2
-//     */
-//    public void rect(int x1, int y1, int x2, int y2){
-//
-//        // swap x1 & x2 and/or y1 & y2 so 1 < 2
-//        if(x1 > x2){
-//            int xt = x1;
-//            x1 = x2;
-//            x2 = xt;
-//        }
-//        if(y1 > y2){
-//            int yt = y1;
-//            y1 = y2;
-//            y2 = yt;
-//        }
-//
-//        for(int a = x1; a <= x2; a++){
-//            for(int b = y1; b <= y2; b++){
-//                boolean is_edge = a == x1 || a == x2 || b == y1 || b == y2;
-//                color(is_edge && this.stroke != null ? this.stroke : this.fill);
-//                pixel(a, b);
-//            }
-//        }
-//    }
-//
-//    /**
-//     * Paints a rectangle with the fill and stroke colors.
-//     * @param a vertex 1
-//     * @param b vertex 2
-//     */
-//    public void rect(Vertex a, Vertex b){
-//        rect(a.getX(), a.getY(), b.getX(), b.getY());
-//    }
+    /**
+     * Paints a rectangle with the fill and stroke colors.
+     * @param x1 x coordinate of vertex 1
+     * @param y1 y coordinate of vertex 1
+     * @param x2 x coordinate of vertex 2
+     * @param y2 y coordinate of vertex 2
+     */
+    public void rect(int x1, int y1, int x2, int y2){
+        polygon(new Vertex(x1, y1), new Vertex(x1, y2), new Vertex(x2, y2), new Vertex(x2, y1));
+    }
+
+    /**
+     * Paints a rectangle with the fill and stroke colors.
+     * @param a vertex 1
+     * @param b vertex 2
+     */
+    public void rect(Vertex a, Vertex b){
+        rect(a.getX(), a.getY(), b.getX(), b.getY());
+    }
 
     /**
      * Paints a line between two vertices using the stroke color.
@@ -130,13 +111,16 @@ public class Context {
             pixel(Math.round(x1 + xs * i), Math.round(y1 + ys * i));
     }
 
-//    public void circle(int x, int y, int r){
-//
-//        int n_points_octant = (int)Math.ceil(Math.sqrt(2) * r / 2) + 1;
-//
-//        for(int i = 0; i < n_points_octant; i++){
-//            int j = (int) Math.round(Math.sqrt(r * r - i * i));
-//
+    public void circle(Vertex vertex, int r){
+        vertex = vertex.transform(transformations.lastElement());
+        int x = vertex.getX();
+        int y = vertex.getY();
+
+        int n_points_octant = (int)Math.ceil(Math.sqrt(2) * r / 2) + 1;
+
+        for(int i = 0; i < n_points_octant; i++){
+            int j = (int) Math.round(Math.sqrt(r * r - i * i));
+
 //            if(this.fill != null) {
 //                color(this.fill);
 //                for (int k = -i; k <= i; k++) {
@@ -148,95 +132,26 @@ public class Context {
 //                    pixel(x + k, y - i);
 //                }
 //            }
-//
-//            if(this.stroke != null){
-//                color(new Color(0x88FF0000L));
-//                pixel(x+i,y+j); pixel(x-i,y+j);
-//                color(new Color(0x8800FF00L));
-//                pixel(x+j,y+i); pixel(x-j,y+i);
-//                color(new Color(0x880000FFL));
-//                pixel(x+j,y-i); pixel(x-j,y-i);
-//                color(new Color(0x88FF00FFL));
-//                pixel(x+i,y-j); pixel(x-i,y-j);
-//            }
-//
-//        }
-//
-//    }
-//
-//    public void ellipse(int x, int y, int rx, int ry){
-//        color(this.stroke);
-//
-//        int n_points = (int)Math.ceil(rx * Math.PI / 4 + ry * Math.PI / 4);
-//        int[][] points = new int[n_points][2];
-//        n_points = 0;
-//
-//        int steps = (int)Math.ceil(rx * Math.PI / 4 + ry * Math.PI / 4) * 4;
-//        int last_a = x+rx;
-//        int last_b = y;
-//
-//        for(int s = 0; s < steps; s++){
-//            double t = Math.PI * 2 / steps * s;
-//            int a = x + (int)Math.round(rx * Math.cos(t));
-//            int b = y + (int)Math.round(ry * Math.sin(t));
-//            line(last_a, last_b, a, b);
-//            last_a = a;
-//            last_b = b;
-//            // pixel(x + a, y + b);
-//        }
-//
-//    }
+
+            if(color(this.stroke)){
+                pixel(x+i,y+j); pixel(x-i,y+j);
+                pixel(x+j,y+i); pixel(x-j,y+i);
+                pixel(x+j,y-i); pixel(x-j,y-i);
+                pixel(x+i,y-j); pixel(x-i,y-j);
+            }
+
+        }
+
+    }
 
     /**
      * Paints a triangle from three vertices using fill and stroke color.
-     * @param _v0 vertex 1
-     * @param _v1 vertex 2
-     * @param _v2 vertex 3
+     * @param v0 vertex 1
+     * @param v1 vertex 2
+     * @param v2 vertex 3
      */
-    public void triangle(Vertex _v0, Vertex _v1, Vertex _v2){
-
-        _v0 = _v0.transform(transformations.lastElement());
-        _v1 = _v1.transform(transformations.lastElement());
-        _v2 = _v2.transform(transformations.lastElement());
-
-        Vertex[] vertices = {_v0, _v1, _v2};
-        if(color(this.fill)){
-
-            Boundary boundary = new Boundary(vertices);
-
-            for(int y = boundary.bottom(); y <= boundary.top(); y++) {
-                for(int x = boundary.left(); x <= boundary.right(); x++) {
-                    boolean fill = true;
-                    boolean stroke = false;
-                    for(int i = 0; i < 3; i++){
-                        Vertex v1 = vertices[i];
-                        Vertex v2 = vertices[(i + 1) % 3];
-                        Vertex p = vertices[(i + 2) % 3];
-
-
-                        int d1 =  (x - v1.getX()) * (v2.getY() - v1.getY()) - (v2.getX() - v1.getX()) * (y - v1.getY());
-                        int d2 =  (p.getX() - v1.getX()) * (v2.getY() - v1.getY()) - (v2.getX() - v1.getX()) * (p.getY() - v1.getY());
-                        fill &= (d1 > 0) == (d2 > 0);
-                        // stroke |= (-1 <= d1) && (d1 <= 1);
-                        // stroke |= d1 == 0;
-                    }
-
-//                    if(stroke && (color(this.stroke) || color(this.fill)))
-//                        pixel(x, y);
-//                    if(!stroke && fill && color(this.fill))
-//                        pixel(x, y);
-                    if(fill && color(this.fill))
-                        pixel(x, y);
-                }
-            }
-        }
-
-        if(color(this.stroke)){
-            paintLine(_v0, _v1);
-            paintLine(_v1, _v2);
-            paintLine(_v2, _v0);
-
-        }
+    public void triangle(Vertex v0, Vertex v1, Vertex v2){
+        polygon(v0, v1, v2);
     }
 
 

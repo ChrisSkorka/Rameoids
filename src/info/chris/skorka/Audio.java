@@ -29,6 +29,7 @@ public class Audio {
 
     public void play(){
         if(clip != null){
+            clip.stop();
             clip.setFramePosition(0);
             clip.start();
         }

@@ -20,7 +20,7 @@ public class Main {
     private static final int MAX_ASTEROID_RADIUS = 20;
     private static final int MIN_ASTEROID_SPAWN_TIME = 500;
     private static final int MAX_ASTEROID_SPAWN_TIME = 2000;
-    private static final int MAX_ASTEROID_COUNT = 15;
+    private static final int MAX_ASTEROID_COUNT = 25;
     private static final int MAX_ASTEROID_SPEED = 100;
     private static final int MAX_ASTEROID_ROTATION_SPEED = 3;
     private static final int SCORE_SCALE = 3;
@@ -29,6 +29,8 @@ public class Main {
     private static final int SPACESHIP_PASSIVE_DRAG = 10;
     private static final int SPACESHIP_ACTIVE_DRAG = 30;
     private static final int SPACESHIP_ROTATION_SPEED = 5;
+
+    private static boolean playSounds = true;
 
     private static final Boundary space = new Boundary(0,0,WIDTH, HEIGHT);
 
@@ -161,7 +163,9 @@ public class Main {
                             if(eBoundary.intersects(spaceshipBoundary)){
                                 toBeRemoved.add(e);
                                 score += 1;
-                                scoreAudio.play();
+
+                                if(playSounds)
+                                    scoreAudio.play();
                             }else{
                                 e.draw(c);
                             }
@@ -179,7 +183,8 @@ public class Main {
                                     e.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
                                     f.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
 
-                                    collisionAudio.play();
+                                    if(playSounds)
+                                        collisionAudio.play();
                                     // new Audio("/Explosion.wav").play();
                                 }
                             }
@@ -249,6 +254,12 @@ public class Main {
                             case GLFW_KEY_RIGHT:
                             case GLFW_KEY_D:
                                 spaceship.vr = 0;
+                                break;
+                            case GLFW_KEY_R:
+                                Entity.drawBoundaries = !Entity.drawBoundaries;
+                                break;
+                            case GLFW_KEY_F:
+                                playSounds = !playSounds;
                                 break;
                         }
                     }

@@ -10,10 +10,33 @@ public class CircularBoundary {
         this.r = r;
     }
 
+    public CircularBoundary(Vertex... vertices){
+        this.x = 0;
+        this.y = 0;
+        this.r = 0;
+
+        for(Vertex v : vertices){
+            this.x += v.getX();
+            this.y += v.getY();
+        }
+
+        this.x /= vertices.length;
+        this.y /= vertices.length;
+
+        for(Vertex v : vertices){
+            int d = (int) Math.round(Math.sqrt(
+                (v.getX() - this.x) * (v.getX() - this.x) +
+                (v.getY() - this.y) * (v.getY() - this.y)));
+
+            if(d > this.r)
+                this.r = d;
+        }
+    }
+
     public CircularBoundary(Boundary boundary){
         this.x = (boundary.left() + boundary.right()) / 2;
         this.y = (boundary.bottom() + boundary.top()) / 2;
-        this.r = Math.max(boundary.right() - boundary.left(), boundary.top() - boundary.bottom()) / 2;
+        this.r = (int) Math.round(Math.max(boundary.right() - boundary.left(), boundary.top() - boundary.bottom()) / 2);
     }
 
     public boolean intersects(CircularBoundary circularBoundary){
