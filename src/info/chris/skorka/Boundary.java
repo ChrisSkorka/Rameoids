@@ -25,20 +25,20 @@ public class Boundary {
 
     public Boundary(Boundary... boundaries){
 
-        x1 = boundaries[0].getX1();
-        y1 = boundaries[0].getY1();
-        x2 = boundaries[0].getX2();
-        y2 = boundaries[0].getY2();
+        x1 = boundaries[0].left();
+        y1 = boundaries[0].bottom();
+        x2 = boundaries[0].right();
+        y2 = boundaries[0].top();
 
         for(Boundary b : boundaries) {
-            if (b.getX1() < x1)
-                x1 = b.getX1();
-            if (b.getY1() < y1)
-                y1 = b.getY1();
-            if (b.getX2() > x2)
-                x2 = b.getX2();
-            if (b.getY2() > y2)
-                y2 = b.getY2();
+            if (b.left() < x1)
+                x1 = b.left();
+            if (b.bottom() < y1)
+                y1 = b.bottom();
+            if (b.right() > x2)
+                x2 = b.right();
+            if (b.top() > y2)
+                y2 = b.top();
         }
     }
 
@@ -49,19 +49,19 @@ public class Boundary {
         this.y2 = y2;
     }
 
-    public int getX1() {
+    public int left() {
         return x1;
     }
 
-    public int getX2() {
+    public int right() {
         return x2;
     }
 
-    public int getY1() {
+    public int bottom() {
         return y1;
     }
 
-    public int getY2() {
+    public int top() {
         return y2;
     }
 

@@ -132,6 +132,7 @@ public class OpenGlWindow {
      * Loop to process redraws and events. Called repeatedly.
      */
     private void loop() {
+
         // This line is critical for LWJGL's interoperation with GLFW's
         // OpenGL context, or any context that is managed externally.
         // LWJGL detects the context that is current in the current thread,
@@ -171,7 +172,6 @@ public class OpenGlWindow {
             // The key callback above will only be
             // invoked during this call.
             glfwPollEvents();
-
 
 
         }
@@ -399,8 +399,8 @@ public class OpenGlWindow {
 
             Boundary boundary = new Boundary(vertices);
 
-            for(int y = boundary.getY1(); y <= boundary.getY2(); y++) {
-                for(int x = boundary.getX1(); x <= boundary.getX2(); x++) {
+            for(int y = boundary.bottom(); y <= boundary.top(); y++) {
+                for(int x = boundary.left(); x <= boundary.right(); x++) {
                     boolean fill = true;
                     boolean stroke = false;
                     for(int i = 0; i < 3; i++){
@@ -446,8 +446,8 @@ public class OpenGlWindow {
 
             Boundary boundary = new Boundary(vertices);
 
-            for(int y = boundary.getY1(); y <= boundary.getY2(); y++) {
-                for(int x = boundary.getX1(); x <= boundary.getX2(); x++) {
+            for(int y = boundary.bottom(); y <= boundary.top(); y++) {
+                for(int x = boundary.left(); x <= boundary.right(); x++) {
                     boolean fill = true;
                     for(int i = 0; i < 3; i++){
                         Vertex v1 = vertices[i];
@@ -495,9 +495,9 @@ public class OpenGlWindow {
 //
 //            Boundary boundary = new Boundary(vertices);
 //
-//            for(int y = boundary.getY1(); y <= boundary.getY2(); y++){
+//            for(int y = boundary.bottom(); y <= boundary.top(); y++){
 //                boolean draw = false;
-//                for(int x = boundary.getX1(); x <= boundary.getX2(); x++){
+//                for(int x = boundary.left(); x <= boundary.right(); x++){
 //                    boolean intersect = false;
 //                    for(Vertex[] line : lines){
 //                        boolean is_between_y = line[0].getY() <= y && y <= line[1].getY();

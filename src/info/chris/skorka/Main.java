@@ -1,5 +1,6 @@
 package info.chris.skorka;
 import java.util.LinkedList;
+import java.util.List;
 import java.util.Random;
 
 import static org.lwjgl.glfw.GLFW.*;
@@ -9,13 +10,19 @@ public class Main {
     private static long nextAsteroidTime = System.currentTimeMillis();
     private static int score = 0;
 
-    private static final int MIN_ASTEROID_N = 8;
-    private static final int MAX_ASTEROID_N = 15;
+    private static final int WIDTH = 510;
+    private static final int HEIGHT = 290;
+    private static final int SCALE = 4;
+
+    private static final int MIN_ASTEROID_N = 4;
+    private static final int MAX_ASTEROID_N = 9;
     private static final int MIN_ASTEROID_RADIUS = 10;
     private static final int MAX_ASTEROID_RADIUS = 20;
     private static final int MIN_ASTEROID_SPAWN_TIME = 500;
     private static final int MAX_ASTEROID_SPAWN_TIME = 2000;
-    private static final int MAX_ASTEROID_COUNT = 25;
+    private static final int MAX_ASTEROID_COUNT = 15;
+    private static final int MAX_ASTEROID_SPEED = 100;
+    private static final int MAX_ASTEROID_ROTATION_SPEED = 3;
     private static final int SCORE_SCALE = 3;
 
     private static final int SPACESHIP_ACCELERATION = 800;
@@ -23,30 +30,80 @@ public class Main {
     private static final int SPACESHIP_ACTIVE_DRAG = 30;
     private static final int SPACESHIP_ROTATION_SPEED = 5;
 
+    private static final Boundary space = new Boundary(0,0,WIDTH, HEIGHT);
+
     public static void main(String[] args) {
 
-
-        Entity spaceship = new Entity(50, 50, new Polygon (
-                new Color(0x8899AA),
-                new Color(0x335588),
-                new Vertex(0,15),
-                new Vertex(15, -15),
-                new Vertex(0, -5),
-                new Vertex(-15, -15)
-        ), new Polygon(
-                new Color(0x5588FF),
-                new Color(0x0055FF),
-                new Vertex(-10, -13),
-                new Vertex(-4, -9),
-                new Vertex(-8, -20)
-        ), new Polygon(
-                new Color(0x5588FF),
-                new Color(0x0055FF),
-                new Vertex(10, -13),
-                new Vertex(4, -9),
-                new Vertex(8, -20)
-        ));
-        spaceship.d = 10;
+        Entity spaceship = new Entity(50, 50,
+            new Polygon(
+                new Color(0xFF8833),
+                new Color(0xFF5500),
+                new Vertex(15, 0),
+                new Vertex(10, -8),
+                new Vertex(15, -12)
+            ), new Polygon(
+                new Color(0xFF8833),
+                new Color(0xFF5500),
+                new Vertex(-15, 0),
+                new Vertex(-10, -8),
+                new Vertex(-15, -12)
+            ), new Polygon(
+                new Color(0xFF8833),
+                new Color(0xFF5500),
+                new Vertex(5, -25),
+                new Vertex(0, -28),
+                new Vertex(3, -32)
+            ), new Polygon(
+                new Color(0xFF8833),
+                new Color(0xFF5500),
+                new Vertex(-5, -25),
+                new Vertex(-0, -28),
+                new Vertex(-3, -32)
+            ), new Polygon (
+                new Color(0xAA9988),
+                new Color(0x885533),
+                new Vertex(0,22),
+                new Vertex(3,20),
+                new Vertex(5, 15),
+                new Vertex(5, -5),
+                new Vertex(15, 0),
+                new Vertex(5, -15),
+                new Vertex(5, -20),
+                new Vertex(10, -30),
+                new Vertex(5, -25),
+                new Vertex(-0, -28),
+                new Vertex(-5, -25),
+                new Vertex(-10, -30),
+                new Vertex(-5, -20),
+                new Vertex(-5, -15),
+                new Vertex(-15, 0),
+                new Vertex(-5, -5),
+                new Vertex(-5, 15),
+                new Vertex(-3,20)
+                )
+//        new Polygon (
+//                new Color(0x8899AA),
+//                new Color(0x335588),
+//                new Vertex(0,15),
+//                new Vertex(15, -15),
+//                new Vertex(0, -5),
+//                new Vertex(-15, -15)
+//        ), new Polygon(
+//                new Color(0x5588FF),
+//                new Color(0x0055FF),
+//                new Vertex(-10, -13),
+//                new Vertex(-4, -9),
+//                new Vertex(-8, -20)
+//        ), new Polygon(
+//                new Color(0x5588FF),
+//                new Color(0x0055FF),
+//                new Vertex(10, -13),
+//                new Vertex(4, -9),
+//                new Vertex(8, -20)
+//        )
+        );
+        spaceship.d = SPACESHIP_PASSIVE_DRAG;
+        spaceship.bouncyBoundarySpace = space;
 
         LinkedList<Entity> asteroids = new LinkedList<Entity>();
         
@@ -65,54 +122,62 @@ public class Main {
 
         OpenGlWindow window;
         window = new OpenGlWindow(
-                510,
-                290,
-                1,
+                WIDTH,
+                HEIGHT,
+                SCALE,
                 "Pixels",
                 new OpenGlWindow.DrawEventListener() {
                     @Override
                     public void onDraw(OpenGlWindow w, long millis, long delta) {
                         // System.out.println(delta);
 
-                        //w.clear(1,0,0,1);
+                        // clear screen
                         w.fill(new Color(0x000000));
                         w.stroke(null);
                         w.clear(0,0,0,0);
 
                         if(System.currentTimeMillis() > nextAsteroidTime && asteroids.size() < MAX_ASTEROID_COUNT){
-                            asteroids.add(newAsteroid(w));
+                            asteroids.add(newAsteroid(w, asteroids));
                             nextAsteroidTime =
                                     System.currentTimeMillis() +
                                     MIN_ASTEROID_SPAWN_TIME +
                                     random.nextInt(MAX_ASTEROID_SPAWN_TIME - MIN_ASTEROID_SPAWN_TIME);
                         }
 
-                        Boundary spaceshipBoundary = spaceship.getBoundary();
-                        if(spaceshipBoundary.getX1() < 0 || spaceshipBoundary.getX2() > w.getWidth())
-                            spaceship.vx = -spaceship.vx;
-                        if(spaceshipBoundary.getY1() < 0 || spaceshipBoundary.getY2() > w.getHeight())
-                            spaceship.vy = -spaceship.vy;
+                        // update spaceship
+                        CircularBoundary spaceshipBoundary = spaceship.getCircularBoundary();
                         spaceship.update(millis, delta);
                         spaceship.draw(w);
 
+                        // update asteroids and check for collisions with spaceship and other asteroids
                         LinkedList<Entity> toBeRemoved = new LinkedList<Entity>();
                         for(Entity e : asteroids){
                             e.update(millis, delta);
-                            Boundary asteroidBoundary = e.getBoundary();
-                            if(asteroidBoundary.getX1() < 0 || asteroidBoundary.getX2() > w.getWidth())
-                                e.vx = -e.vx;
-                            if(asteroidBoundary.getY1() < 0 || asteroidBoundary.getY2() > w.getHeight())
-                                e.vy = -e.vy;
+                            CircularBoundary eBoundary = e.getCircularBoundary();
 
-                            if(asteroidBoundary.intersects(spaceshipBoundary)){
+                            if(eBoundary.intersects(spaceshipBoundary)){
                                 toBeRemoved.add(e);
                                 score += 1;
                             }else{
                                 e.draw(w);
                             }
+
+                            for(Entity f : asteroids){
+                                CircularBoundary fBoundary = f.getCircularBoundary();
+
+                                if(e != f && eBoundary.intersects(fBoundary)){
+                                    double fvx = f.vx;
+                                    double fvy = f.vy;
+                                    f.vx = e.vx;
+                                    f.vy = e.vy;
+                                    e.vx = fvx;
+                                    e.vy = fvy;
+                                    e.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
+                                    f.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
+                                }
+                            }
                         }
-                        for(Entity e : toBeRemoved)
-                            asteroids.remove(e);
+                        asteroids.removeAll(toBeRemoved);
 
                         // draw score
                         String scoreStr = Integer.toString(score);
@@ -122,13 +187,13 @@ public class Main {
 
                         w.fill(new Color(0x88FFFFFFL));
 
-//                        w.rotateZ(0.3);
-//                        w.scale(3,3,0);
-//                        w.translate(0,-50);
+                        w.rotateZ(0.3);
+                        w.scale(3,3,0);
+                        w.translate(0,-50);
 
                         w.translate(5, w.getHeight() - 7*SCORE_SCALE - 10);
                         for(int i = 0; i < digits.length; i++){
-                            w.translate(5*SCORE_SCALE, 0);
+                            w.translate(5*SCORE_SCALE + 30, 0);
                             w.bitmap(numberBitMaps[digits[i]]);
                         }
 
@@ -196,7 +261,7 @@ public class Main {
         window.open();
     }
 
-    private static Entity newAsteroid(OpenGlWindow window){
+    private static Entity newAsteroid(OpenGlWindow window, List<Entity> asteroids){
 
         int n = MIN_ASTEROID_N + random.nextInt(MAX_ASTEROID_N - MIN_ASTEROID_N);
         Vertex[] vertices = new Vertex[n];
@@ -206,13 +271,27 @@ public class Main {
             vertices[i] = new Vertex(Math.cos(r) * d, Math.sin(r) * d);
         }
 
-        double x = random.nextDouble() * (window.getWidth() - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
-        double y = random.nextDouble() * (window.getHeight() - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
+        double x = 0;
+        double y = 0;
+        boolean positionFound = false;
+        while(!positionFound){
+            x = random.nextDouble() * (window.getWidth() - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
+            y = random.nextDouble() * (window.getHeight() - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
+            CircularBoundary boundary = new CircularBoundary((int)x, (int)y, MAX_ASTEROID_RADIUS);
+            positionFound = true;
+            for(Entity e : asteroids){
+                if(boundary.intersects(e.getCircularBoundary())){
+                    positionFound = false;
+                    break;
+                }
+            }
+        }
 
         Entity asteroid = new Entity(x, y, new Polygon (new Color(0x555555), new Color(0x888888), vertices));
-        asteroid.vr = random.nextDouble() * 2;
-        asteroid.vx = random.nextDouble() * 20 - 10;
-        asteroid.vy = random.nextDouble() * 20 - 10;
+        asteroid.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
+        asteroid.vx = random.nextDouble() * 2 * MAX_ASTEROID_SPEED - MAX_ASTEROID_SPEED;
+        asteroid.vy = random.nextDouble() * 2 * MAX_ASTEROID_SPEED - MAX_ASTEROID_SPEED;
+        asteroid.boundarySpace = space;
 
         return asteroid;
     }
