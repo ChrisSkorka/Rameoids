@@ -83,7 +83,7 @@ public class OpenGlWindow {
         window = glfwCreateWindow(this.width * this.scale, this.height * this.scale, this.title, NULL, NULL);
         if ( window == NULL )
             throw new RuntimeException("Failed to create the GLFW window");
-        System.out.printf("Windows with %dx%d pixels at %dx%d resolution\n", this.width, this.height, this.width * this.scale, this.height * this.scale);
+        System.out.printf("Window with size %dx%d at %dx%d resolution\n", this.width * this.scale, this.height * this.scale, this.width, this.height);
 
         // Setup a key callback. It will be called every time a key is pressed, repeated or released.
         glfwSetKeyCallback(window, (window, key, scancode, action, mods) -> {

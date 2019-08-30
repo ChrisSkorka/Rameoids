@@ -10,9 +10,9 @@ public class Main {
     private static long nextAsteroidTime = System.currentTimeMillis();
     private static int score = 0;
 
-    private static final int WIDTH = 510;
-    private static final int HEIGHT = 290;
-    private static final int SCALE = 4;
+    private static final int WIDTH = 350;
+    private static final int HEIGHT = 190;
+    private static final int SCALE = 5;
 
     private static final int MIN_ASTEROID_N = 4;
     private static final int MAX_ASTEROID_N = 9;
@@ -120,6 +120,9 @@ public class Main {
                 BitMap.scale(SCORE_SCALE, BitMap.from7Segment(new boolean[]{true,  true,  true,  true,  false, true,  true }))
         };
 
+        Audio scoreAudio = new Audio("/Pickup_Coin.wav");
+        Audio collisionAudio = new Audio("/Explosion.wav");
+
         OpenGlWindow window;
         window = new OpenGlWindow(
                 WIDTH,
@@ -158,6 +161,7 @@ public class Main {
                             if(eBoundary.intersects(spaceshipBoundary)){
                                 toBeRemoved.add(e);
                                 score += 1;
+                                scoreAudio.play();
                             }else{
                                 e.draw(w);
                             }
@@ -174,6 +178,9 @@ public class Main {
                                     e.vy = fvy;
                                     e.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
                                     f.vr = random.nextDouble() * 2 * MAX_ASTEROID_ROTATION_SPEED - MAX_ASTEROID_ROTATION_SPEED;
+
+                                    collisionAudio.play();
+                                    // new Audio("/Explosion.wav").play();
                                 }
                             }
                         }

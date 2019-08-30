@@ -2,18 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22b2c97b-eac8-486d-b7f7-85d68efd440b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Explosion.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/res/Pickup_Coin.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Boundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Boundary.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Asteroids.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroids.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Audio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Audio.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" afterDir="false" />
     </list>
@@ -32,8 +32,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="376">
-              <caret line="228" column="29" lean-forward="true" selection-start-line="228" selection-start-column="29" selection-end-line="228" selection-end-column="29" />
+            <state relative-caret-position="340">
+              <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -44,8 +44,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Polygon.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-272">
-              <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="64" />
+            <state relative-caret-position="442">
+              <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="64" />
             </state>
           </provider>
         </entry>
@@ -53,14 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1700">
-              <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-              <folding>
-                <element signature="e#2785#2786#0" expanded="true" />
-                <element signature="e#2842#2843#0" expanded="true" />
-                <element signature="e#2894#2895#0" expanded="true" />
-                <element signature="e#2959#2960#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="2261">
+              <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -69,7 +63,7 @@
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="204">
-              <caret line="12" column="53" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="12" selection-end-column="53" />
+              <caret line="12" column="53" selection-start-line="6" selection-start-column="17" selection-end-line="12" selection-end-column="53" />
             </state>
           </provider>
         </entry>
@@ -77,7 +71,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="189">
+            <state relative-caret-position="255">
               <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
             </state>
           </provider>
@@ -95,8 +89,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2941">
-              <caret line="173" column="29" lean-forward="true" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+            <state relative-caret-position="-6">
+              <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#18502#18503#0" expanded="true" />
@@ -109,8 +103,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Audio.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+            <state relative-caret-position="476">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -176,12 +170,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
               <item name="Asteroid" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Asteroid" type="462c0819:PsiDirectoryNode" />
+              <item name="res" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
@@ -198,17 +199,24 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="X:\GitHub\3802ICT-Modelling-and-Visualisation-Assignments\Asteroid\res" />
+      <recent name="X:\GitHub\3802ICT-Modelling-and-Visualisation-Assignments\Asteroid\src\res" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\GitHub\3802ICT-Modelling-and-Visualisation-Assignments\Asteroid\res" />
+    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -253,10 +261,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="33" width="1455" height="935" extended-state="6" />
+    <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24229391" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24466951" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -265,7 +273,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32876712" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21793275" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21776815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -319,6 +327,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Polygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="26" column="47" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2261">
+          <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="12" column="53" selection-start-line="6" selection-start-column="17" selection-end-line="12" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Boundary.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -326,54 +362,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="53" lean-forward="true" selection-start-line="6" selection-start-column="17" selection-end-line="12" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Polygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-272">
-          <caret line="26" column="47" lean-forward="true" selection-start-line="26" selection-start-column="47" selection-end-line="26" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="133" column="26" lean-forward="true" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-          <folding>
-            <element signature="e#2785#2786#0" expanded="true" />
-            <element signature="e#2842#2843#0" expanded="true" />
-            <element signature="e#2894#2895#0" expanded="true" />
-            <element signature="e#2959#2960#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="189">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="228" column="29" lean-forward="true" selection-start-line="228" selection-start-column="29" selection-end-line="228" selection-end-column="29" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2941">
-          <caret line="173" column="29" lean-forward="true" selection-start-line="173" selection-start-column="29" selection-end-line="173" selection-end-column="29" />
+        <state relative-caret-position="-6">
+          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#18502#18503#0" expanded="true" />
@@ -382,10 +374,20 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Audio.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="63" column="10" selection-start-line="63" selection-start-column="10" selection-end-line="63" selection-end-column="10" />
+        <state relative-caret-position="476">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
