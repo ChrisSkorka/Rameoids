@@ -10,9 +10,9 @@ public class Main {
     private static long nextAsteroidTime = System.currentTimeMillis();
     private static int score = 0;
 
-    private static final int WIDTH = 350;
-    private static final int HEIGHT = 190;
-    private static final int SCALE = 5;
+    private static final int WIDTH = 1500;
+    private static final int HEIGHT = 900;
+    private static final int SCALE = 1;
 
     private static final int MIN_ASTEROID_N = 4;
     private static final int MAX_ASTEROID_N = 9;
@@ -131,16 +131,16 @@ public class Main {
                 "Pixels",
                 new OpenGlWindow.DrawEventListener() {
                     @Override
-                    public void onDraw(OpenGlWindow w, long millis, long delta) {
+                    public void onDraw(Context c, long millis, long delta) {
                         // System.out.println(delta);
 
                         // clear screen
-                        w.fill(new Color(0x000000));
-                        w.stroke(null);
-                        w.clear(0,0,0,0);
+                        c.fill(new Color(0x000000));
+                        c.stroke(null);
+                        c.clear(0,0,0,0);
 
                         if(System.currentTimeMillis() > nextAsteroidTime && asteroids.size() < MAX_ASTEROID_COUNT){
-                            asteroids.add(newAsteroid(w, asteroids));
+                            asteroids.add(newAsteroid(asteroids));
                             nextAsteroidTime =
                                     System.currentTimeMillis() +
                                     MIN_ASTEROID_SPAWN_TIME +
@@ -150,7 +150,7 @@ public class Main {
                         // update spaceship
                         CircularBoundary spaceshipBoundary = spaceship.getCircularBoundary();
                         spaceship.update(millis, delta);
-                        spaceship.draw(w);
+                        spaceship.draw(c);
 
                         // update asteroids and check for collisions with spaceship and other asteroids
                         LinkedList<Entity> toBeRemoved = new LinkedList<Entity>();
@@ -163,7 +163,7 @@ public class Main {
                                 score += 1;
                                 scoreAudio.play();
                             }else{
-                                e.draw(w);
+                                e.draw(c);
                             }
 
                             for(Entity f : asteroids){
@@ -192,16 +192,16 @@ public class Main {
                         for(int i = 0; i < scoreStr.length(); i++)
                             digits[i] = scoreStr.charAt(i) - '0';
 
-                        w.fill(new Color(0x88FFFFFFL));
+                        c.fill(new Color(0x88FFFFFFL));
 
-                        w.rotateZ(0.3);
-                        w.scale(3,3,0);
-                        w.translate(0,-50);
+//                        c.rotateZ(0.3);
+//                        c.scale(3,3,0);
+//                        c.translate(0,-50);
 
-                        w.translate(5, w.getHeight() - 7*SCORE_SCALE - 10);
+                        c.translate(5, c.getHeight() - 7*SCORE_SCALE - 10);
                         for(int i = 0; i < digits.length; i++){
-                            w.translate(5*SCORE_SCALE + 30, 0);
-                            w.bitmap(numberBitMaps[digits[i]]);
+                            c.translate(5*SCORE_SCALE /*+ 30*/, 0);
+                            c.bitmap(numberBitMaps[digits[i]]);
                         }
 
                         // TODO undo transformation if there's anything after this
@@ -268,7 +268,7 @@ public class Main {
         window.open();
     }
 
-    private static Entity newAsteroid(OpenGlWindow window, List<Entity> asteroids){
+    private static Entity newAsteroid(List<Entity> asteroids){
 
         int n = MIN_ASTEROID_N + random.nextInt(MAX_ASTEROID_N - MIN_ASTEROID_N);
         Vertex[] vertices = new Vertex[n];
@@ -282,8 +282,8 @@ public class Main {
         double y = 0;
         boolean positionFound = false;
         while(!positionFound){
-            x = random.nextDouble() * (window.getWidth() - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
-            y = random.nextDouble() * (window.getHeight() - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
+            x = random.nextDouble() * (WIDTH - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
+            y = random.nextDouble() * (HEIGHT - 2 * MAX_ASTEROID_RADIUS) + MAX_ASTEROID_RADIUS;
             CircularBoundary boundary = new CircularBoundary((int)x, (int)y, MAX_ASTEROID_RADIUS);
             positionFound = true;
             for(Entity e : asteroids){

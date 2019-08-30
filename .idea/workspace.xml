@@ -2,18 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="22b2c97b-eac8-486d-b7f7-85d68efd440b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/res/Explosion.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/res/Pickup_Coin.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/info/chris/skorka/Context.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Asteroids.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Asteroids.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Audio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Audio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Entity.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main$3.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$DrawEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$DrawEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$KeyboardEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$KeyboardEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$MouseEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$MouseEventListener.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" afterDir="false" />
     </list>
@@ -29,13 +27,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
+            <state relative-caret-position="173">
+              <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#5506#9298#0" expanded="true" />
+                <element signature="e#9297#9298#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -53,8 +53,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2261">
-              <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
+            <state relative-caret-position="232">
+              <caret line="103" column="30" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -89,18 +89,37 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-6">
-              <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
+            <state relative-caret-position="275">
+              <caret line="188" column="70" lean-forward="true" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="70" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#18502#18503#0" expanded="true" />
-                <element signature="e#18585#18586#0" expanded="true" />
+                <element signature="e#1406#1794#0" />
+                <element signature="e#1800#4490#0" />
+                <element signature="e#6280#6281#0" expanded="true" />
+                <element signature="e#6308#6309#0" expanded="true" />
+                <element signature="e#6337#6338#0" expanded="true" />
+                <element signature="e#6366#6367#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Context.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="340">
+              <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+              <folding>
+                <element signature="e#785#786#0" expanded="true" />
+                <element signature="e#812#813#0" expanded="true" />
+                <element signature="e#10486#10487#0" expanded="true" />
+                <element signature="e#10569#10570#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Audio.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="476">
@@ -151,10 +170,11 @@
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Polygon.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Main.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Context.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Main.java" />
       </list>
     </option>
   </component>
@@ -334,13 +354,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2261">
-          <caret line="133" column="26" selection-start-line="133" selection-start-column="26" selection-end-line="133" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
@@ -362,34 +375,60 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-6">
-          <caret line="66" column="25" selection-start-line="66" selection-start-column="25" selection-end-line="66" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#18502#18503#0" expanded="true" />
-            <element signature="e#18585#18586#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="181" column="36" selection-start-line="181" selection-start-column="36" selection-end-line="181" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Audio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
           <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
           <folding>
             <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="275">
+          <caret line="188" column="70" lean-forward="true" selection-start-line="188" selection-start-column="4" selection-end-line="188" selection-end-column="70" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1406#1794#0" />
+            <element signature="e#1800#4490#0" />
+            <element signature="e#6280#6281#0" expanded="true" />
+            <element signature="e#6308#6309#0" expanded="true" />
+            <element signature="e#6337#6338#0" expanded="true" />
+            <element signature="e#6366#6367#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Context.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="34" column="52" selection-start-line="34" selection-start-column="52" selection-end-line="34" selection-end-column="52" />
+          <folding>
+            <element signature="e#785#786#0" expanded="true" />
+            <element signature="e#812#813#0" expanded="true" />
+            <element signature="e#10486#10487#0" expanded="true" />
+            <element signature="e#10569#10570#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="103" column="30" selection-start-line="103" selection-start-column="30" selection-end-line="103" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="173">
+          <caret line="13" column="39" selection-start-line="13" selection-start-column="39" selection-end-line="13" selection-end-column="39" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#5506#9298#0" expanded="true" />
+            <element signature="e#9297#9298#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -101,38 +101,38 @@ public class Entity {
         }
     }
 
-    public void draw(OpenGlWindow w){
-        w.rotateZ(r);
+    public void draw(Context c){
+        c.rotateZ(r);
 
-        w.translate(x, y);
+        c.translate(x, y);
         for(Polygon polygon : polygons)
-            w.polygon(polygon);
+            c.polygon(polygon);
 
         if(infiniteSpace != null) {
-            w.translate(-w.getWidth(), 0);
+            c.translate(-c.getWidth(), 0);
             for (Polygon polygon : polygons)
-                w.polygon(polygon);
-            w.undoTransform();
+                c.polygon(polygon);
+            c.undoTransform();
 
-            w.translate(w.getWidth(), 0);
+            c.translate(c.getWidth(), 0);
             for (Polygon polygon : polygons)
-                w.polygon(polygon);
-            w.undoTransform();
+                c.polygon(polygon);
+            c.undoTransform();
 
-            w.translate(0, -w.getHeight());
+            c.translate(0, -c.getHeight());
             for (Polygon polygon : polygons)
-                w.polygon(polygon);
-            w.undoTransform();
+                c.polygon(polygon);
+            c.undoTransform();
 
-            w.translate(0, w.getHeight());
+            c.translate(0, c.getHeight());
             for (Polygon polygon : polygons)
-                w.polygon(polygon);
-            w.undoTransform();
+                c.polygon(polygon);
+            c.undoTransform();
 
         }
 
-        w.undoTransform();
-        w.undoTransform();
+        c.undoTransform();
+        c.undoTransform();
     }
 
     public Boundary getBoundary(){
