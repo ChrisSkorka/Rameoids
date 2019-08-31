@@ -1,5 +1,8 @@
 package info.chris.skorka;
 
+/**
+ * Represents a vertex/point in 3D space in terms of z, y, z double values with an additional w term.
+ */
 public class Vertex {
 
     private double x, y, z;

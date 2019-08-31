@@ -13,6 +13,10 @@ import static org.lwjgl.opengl.GL11.*;
 import static org.lwjgl.system.MemoryStack.*;
 import static org.lwjgl.system.MemoryUtil.*;
 
+
+/**
+ * Creates and manages a window with draw and keyboard event callbacks. Draw callbacks use the Context object as an interface to draw onto the screen.
+ */
 public class OpenGlWindow {
 
     // The window handle
@@ -50,7 +54,7 @@ public class OpenGlWindow {
     }
 
     /**
-     * Sets up and opens a window and begins the draw loop
+     * Sets up and opens a window and begins the draw loop.
      */
     public void open() {
 
@@ -67,7 +71,7 @@ public class OpenGlWindow {
     }
 
     /**
-     * Initializes OpenGL and creates a window
+     * Initializes OpenGL and creates a window.
      */
     private void init() {
 
@@ -181,7 +185,7 @@ public class OpenGlWindow {
 
     /**
      * Get the width of the display.
-     * Note this is the number of pixels of the game not the screen
+     * Note this is the number of pixels of the game not the screen.
      * @return width of the display
      */
     public int getWidth(){
@@ -190,7 +194,7 @@ public class OpenGlWindow {
 
     /**
      * Get the height of the display.
-     * Note this is the number of pixels of the game not the screen
+     * Note this is the number of pixels of the game not the screen.
      * @return height of the display
      */
     public int getHeight(){
@@ -211,7 +215,7 @@ public class OpenGlWindow {
     }
 
     /**
-     * Sets the drawing color for the internal pixel() function
+     * Sets the drawing color for the internal pixel() function.
      * @param c color for pixel() to use
      * @return bool false if no color is set (if c==null) and true otherwise
      */
@@ -225,7 +229,7 @@ public class OpenGlWindow {
     }
 
     /**
-     * paints an individual pixel with the color set by color()
+     * paints an individual pixel with the color set by color().
      * @param x x coordinate
      * @param y y coordinate
      */
@@ -255,7 +259,7 @@ public class OpenGlWindow {
     }
 
     /**
-     * Keyboard event callbacks
+     * Keyboard event callbacks.
      */
     public static abstract class KeyboardEventListener{
 
@@ -276,7 +280,7 @@ public class OpenGlWindow {
     }
 
     /**
-     * Mouse event callbacks
+     * Mouse event callbacks.
      */
     public static abstract class MouseEventListener{
         public abstract void onMouseDown();

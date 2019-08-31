@@ -28,8 +28,8 @@ public class Main {
 
     // spaceship controls
     private static final int SPACESHIP_ACCELERATION = 800;
-    private static final int SPACESHIP_PASSIVE_DRAG = 10;
-    private static final int SPACESHIP_ACTIVE_DRAG = 30;
+    private static final int SPACESHIP_PASSIVE_DRAG = 0; //10;
+    private static final int SPACESHIP_ACTIVE_DRAG = 0; //30;
     private static final int SPACESHIP_ROTATION_SPEED = 5;
 
     // other

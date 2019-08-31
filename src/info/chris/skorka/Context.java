@@ -2,6 +2,10 @@ package info.chris.skorka;
 
 import java.util.Stack;
 
+/**
+ * Context for drawing onto an OpenGlWindow. A new instance of this is provided for each draw event.
+ * Contains all functionality required draw simple graphics.
+ */
 public class Context {
 
 
@@ -10,8 +14,8 @@ public class Context {
     private Color fill, stroke;
 
     /**
-     * Create drawing context object to draw into a window
-     * Starts with the default transformation (identity)
+     * Create drawing context object to draw into a window.
+     * Starts with the default transformation (identity).
      * @param openGlWindow window to draw onto
      */
     public Context(OpenGlWindow openGlWindow){
@@ -21,7 +25,7 @@ public class Context {
 
     /**
      * Get the width of the display.
-     * Note this is the number of pixels of the game not the screen
+     * Note this is the number of pixels of the game not the screen.
      * @return width of the display
      */
     public int getWidth(){
@@ -30,7 +34,7 @@ public class Context {
 
     /**
      * Get the height of the display.
-     * Note this is the number of pixels of the game not the screen
+     * Note this is the number of pixels of the game not the screen.
      * @return height of the display
      */
     public int getHeight(){
@@ -38,7 +42,7 @@ public class Context {
     }
 
     /**
-     * Sets the drawing color for the internal pixel() function
+     * Sets the drawing color for the internal pixel() function.
      * @param color color for pixel() to use
      * @return bool false if no color is set (if c==null) and true otherwise
      */
@@ -47,7 +51,7 @@ public class Context {
     }
 
     /**
-     * paints an individual pixel with the color set by color()
+     * paints an individual pixel with the color set by color().
      * @param x x coordinate
      * @param y y coordinate
      */
@@ -75,7 +79,7 @@ public class Context {
     }
 
     /**
-     * Sets the stroke color
+     * Sets the stroke color.
      * @param color color to use for borders of shapes
      */
     public void stroke(Color color){
@@ -83,7 +87,7 @@ public class Context {
     }
 
     /**
-     * Paints a point (pixel) with the fill color
+     * Paints a point (pixel) with the fill color.
      * @param v Vertex with x and y coordinates
      */
     public void point(Vertex v){
@@ -123,7 +127,7 @@ public class Context {
 
     /**
      * Paints the actual pixels for a line from Vertex a to b.
-     * Note this assumes the transformation has already been applied to the vertices
+     * Note this assumes the transformation has already been applied to the vertices.
      * @param a starting vertex
      * @param b ending vertex
      */
@@ -152,9 +156,9 @@ public class Context {
     }
 
     /**
-     * Draws a circle with a given center vertex and radius
-     * Note only the center point is transformed according the the stored transformation
-     * The shape or size of the circle is NOT affected by the transformation
+     * Draws a circle with a given center vertex and radius.
+     * Note only the center point is transformed according to the stored transformation.
+     * The shape or size of the circle is NOT affected by the transformation.
      * @param vertex center Vertex
      * @param r Radius
      */
@@ -208,8 +212,8 @@ public class Context {
     }
 
     /**
-     * Fills a triangle, vertices should be defined in a clock wise order
-     * This does not paint the outline
+     * Fills a triangle, vertices should be defined in a clock wise order.
+     * This does not paint the outline.
      * @param _v0 Vertex 1
      * @param _v1 Vertex 2
      * @param _v2 Vertex 3
@@ -247,7 +251,7 @@ public class Context {
     }
 
     /**
-     * Draw a polygon as defined by the vertices
+     * Draw a polygon as defined by the vertices.
      * @param vertices array of vertices
      */
     public void polygon(Vertex... vertices){
@@ -255,7 +259,7 @@ public class Context {
     }
 
     /**
-     * Draw a polygon as defined by the polygon object
+     * Draw a polygon as defined by the polygon object.
      * @param polygon The polygon to be drawn
      */
     public void polygon(Polygon polygon){
@@ -273,7 +277,7 @@ public class Context {
     }
 
     /**
-     * Draw a bitmap where each pixel is painted with the fill color if its corresponding value in the bitmap is true
+     * Draw a bitmap where each pixel is painted with the fill color if its corresponding value in the bitmap is true.
      * @param bitmap bitmap to be drawn
      */
     public void bitmap(boolean[][] bitmap){
@@ -288,8 +292,8 @@ public class Context {
     }
 
     /**
-     * Perform a matrix multiplication
-     * a_n_cols must equal b_n_rows
+     * Perform a matrix multiplication.
+     * a_n_cols must equal b_n_rows.
      * @param a Matrix a
      * @param b Matrix b
      * @return
@@ -308,8 +312,8 @@ public class Context {
     }
 
     /**
-     * Apply a new transformation, new transformation matrix is placed on the stack
-     * This transformation is applied ontop of all previous transformations
+     * Apply a new transformation, new transformation matrix is placed on the stack.
+     * This transformation is applied on top of all previous transformations.
      * @param matrix 4x4 transformation matrix
      */
     public void transform(double[][] matrix){
@@ -317,14 +321,31 @@ public class Context {
     }
 
     /**
-     * Undo the last transformation (remove from the transformation stack)
+     * Undo the last transformation (remove from the transformation stack).
      */
     public void undoTransform(){
-        transformations.pop();
+        if(transformations.size() > 1)
+            transformations.pop();
     }
 
     /**
-     * Apply a rotation around the z axis transformation
+     * Get the current transformation matrix (All currently applied transformations combined).
+     * @return 4x4 double transformation matrix
+     */
+    public double [][] getTransformation(){
+        return transformations.lastElement();
+    }
+
+    /**
+     * Get the entire transformation stack.
+     * @return Stack of 4x4 transformation matrices
+     */
+    public Stack<double[][]> getTransformationStack(){
+        return transformations;
+    }
+
+    /**
+     * Apply a rotation around the z axis transformation.
      * @param r Angle in radians to rotate about the z axis
      */
     public void rotateZ(double r){
@@ -337,7 +358,7 @@ public class Context {
     }
 
     /**
-     * Applies a translation transformation, translates 0.0 along the z axis
+     * Applies a translation transformation, translates 0.0 along the z axis.
      * @param x X axis translation
      * @param y Y axis translation
      */
@@ -346,7 +367,7 @@ public class Context {
     }
 
     /**
-     * Applies a translation transformation
+     * Applies a translation transformation.
      * @param x X axis translation
      * @param y Y axis translation
      * @param z Z axis translation
@@ -361,7 +382,7 @@ public class Context {
     }
 
     /**
-     * Applies a scaling transformation
+     * Applies a scaling transformation.
      * @param x X axis scale
      * @param y Y axis scale
      * @param z Z axis scale

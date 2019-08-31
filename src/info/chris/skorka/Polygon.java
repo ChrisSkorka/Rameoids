@@ -1,5 +1,8 @@
 package info.chris.skorka;
 
+/**
+ * Defines a polygon in terms of its vertices, outline, triangles (triangulated), fill color and outline color.
+ */
 public class Polygon {
 
     public Vertex[] vertices;

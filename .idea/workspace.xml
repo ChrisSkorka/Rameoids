@@ -1,14 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="SCOPE_TYPE" value="3" />
+    <option name="CUSTOM_SCOPE_NAME" value="Module 'Asteroids'" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="22b2c97b-eac8-486d-b7f7-85d68efd440b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Audio.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Audio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/BitMap.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/BitMap.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Boundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Boundary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/CircularBoundary.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/CircularBoundary.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Color.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Color.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Context.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Context.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Entity.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Entity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$DrawEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$DrawEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$KeyboardEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$KeyboardEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$MouseEventListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow$MouseEventListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/OpenGlWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Polygon.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Polygon.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Vertex.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Asteroids/info/chris/skorka/Vertex.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/BitMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/BitMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Color.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Color.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Context.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Context.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Polygon.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Polygon.java" afterDir="false" />
@@ -26,38 +42,153 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-680">
-              <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
+            <state relative-caret-position="238">
+              <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#5237#10011#0" expanded="true" />
-                <element signature="e#10010#10011#0" expanded="true" />
-                <element signature="class#9320:11181" />
-                <element signature="method#onKeyDown#0;class#9320:11181" />
-                <element signature="method#onKeyUp#0;class#9320:11181" />
-                <element signature="class#11203:11457" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="13" column="44" selection-end-line="290" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="docComment;method#OpenGlWindow#0;class#OpenGlWindow#0" />
+                <element signature="method#OpenGlWindow#0;class#OpenGlWindow#0" />
+                <element signature="method#init#0;class#OpenGlWindow#0" />
+                <element signature="method#loop#0;class#OpenGlWindow#0" />
+                <element signature="e#6692#6693#0" expanded="true" />
+                <element signature="e#6720#6721#0" expanded="true" />
+                <element signature="e#6908#6909#0" expanded="true" />
+                <element signature="e#6937#6938#0" expanded="true" />
+                <element signature="class#KeyboardEventListener#0;class#OpenGlWindow#0" />
+                <element signature="class#MouseEventListener#0;class#OpenGlWindow#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Context.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" column="33" selection-end-line="398" />
+              <folding>
+                <element signature="e#772#773#0" expanded="true" />
+                <element signature="e#818#819#0" expanded="true" />
+                <element signature="e#1007#1008#0" expanded="true" />
+                <element signature="e#1054#1055#0" expanded="true" />
+                <element signature="e#1298#1299#0" expanded="true" />
+                <element signature="e#1346#1347#0" expanded="true" />
+                <element signature="e#1524#1525#0" expanded="true" />
+                <element signature="e#1564#1565#0" expanded="true" />
+                <element signature="e#1886#1887#0" expanded="true" />
+                <element signature="e#1945#1946#0" expanded="true" />
+                <element signature="e#2080#2081#0" expanded="true" />
+                <element signature="e#2113#2114#0" expanded="true" />
+                <element signature="e#2252#2253#0" expanded="true" />
+                <element signature="e#2287#2288#0" expanded="true" />
+                <element signature="e#3128#3129#0" expanded="true" />
+                <element signature="e#3188#3189#0" expanded="true" />
+                <element signature="e#6129#6130#0" expanded="true" />
+                <element signature="e#6164#6165#0" expanded="true" />
+                <element signature="e#7762#7763#0" expanded="true" />
+                <element signature="e#7832#7833#0" expanded="true" />
+                <element signature="e#9614#9615#0" expanded="true" />
+                <element signature="e#9697#9698#0" expanded="true" />
+                <element signature="e#10107#10108#0" expanded="true" />
+                <element signature="e#10159#10160#0" expanded="true" />
+                <element signature="e#10327#10328#0" expanded="true" />
+                <element signature="e#10365#10366#0" expanded="true" />
+                <element signature="e#10960#10961#0" expanded="true" />
+                <element signature="e#10994#10995#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Polygon.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+              <folding>
+                <element signature="method#Polygon#0;class#Polygon#0" />
+                <element signature="method#linesFromVertices#0;class#Polygon#0" />
+                <element signature="method#decomposePolygon#0;class#Polygon#0" />
+                <element signature="method#decomposeCWPolygon#0;class#Polygon#0" />
+                <element signature="method#decomposeConvexPolygon#0;class#Polygon#0" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Color.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="85">
-              <caret line="5" lean-forward="true" selection-start-line="5" selection-end-line="5" />
+              <caret line="5" column="20" selection-end-line="115" />
               <folding>
-                <element signature="docComment;method#Entity#0;class#Entity#0" />
-                <element signature="method#Entity#0;class#Entity#0" />
-                <element signature="docComment;method#update#0;class#Entity#0" />
-                <element signature="method#update#0;class#Entity#0" />
-                <element signature="docComment;method#draw#0;class#Entity#0" />
-                <element signature="method#draw#0;class#Entity#0" />
-                <element signature="docComment;method#getBoundary#0;class#Entity#0" />
-                <element signature="docComment;method#getCircularBoundary#0;class#Entity#0" />
+                <element signature="docComment;method#Color#0;class#Color#0" />
+                <element signature="method#Color#0;class#Color#0" />
+                <element signature="docComment;method#Color#1;class#Color#0" />
+                <element signature="method#Color#1;class#Color#0" />
+                <element signature="docComment;method#Color#2;class#Color#0" />
+                <element signature="method#Color#2;class#Color#0" />
+                <element signature="docComment;method#Color#3;class#Color#0" />
+                <element signature="method#Color#3;class#Color#0" />
+                <element signature="docComment;method#Color#4;class#Color#0" />
+                <element signature="method#Color#4;class#Color#0" />
+                <element signature="docComment;method#getR#0;class#Color#0" />
+                <element signature="e#2044#2045#0" expanded="true" />
+                <element signature="e#2068#2069#0" expanded="true" />
+                <element signature="docComment;method#getG#0;class#Color#0" />
+                <element signature="e#2188#2189#0" expanded="true" />
+                <element signature="e#2212#2213#0" expanded="true" />
+                <element signature="docComment;method#getB#0;class#Color#0" />
+                <element signature="e#2330#2331#0" expanded="true" />
+                <element signature="e#2354#2355#0" expanded="true" />
+                <element signature="docComment;method#getA#0;class#Color#0" />
+                <element signature="e#2474#2475#0" expanded="true" />
+                <element signature="e#2498#2499#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Vertex.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="101" selection-end-line="94" />
+              <folding>
+                <element signature="e#1705#1706#0" expanded="true" />
+                <element signature="e#1746#1747#0" expanded="true" />
+                <element signature="e#1848#1849#0" expanded="true" />
+                <element signature="e#1889#1890#0" expanded="true" />
+                <element signature="e#1991#1992#0" expanded="true" />
+                <element signature="e#2032#2033#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="119">
+              <caret line="7" column="7" lean-forward="true" selection-end-line="47" />
+              <folding>
+                <element signature="method#from7Segment#0;class#BitMap#0" />
+                <element signature="method#scale#0;class#BitMap#0" />
               </folding>
             </state>
           </provider>
@@ -78,6 +209,7 @@
       <find>ltrue g</find>
       <find>Polygtrue</find>
       <find>fromSevenSegment</find>
+      <find>the the</find>
     </findStrings>
     <replaceStrings>
       <replace>true</replace>
@@ -96,17 +228,17 @@
         <option value="$PROJECT_DIR$/src/info/chris/skorka/VulkanDemo.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/OpenGlDemo.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Boundry.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Main.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" />
+        <option value="$PROJECT_DIR$/src/info/chris/skorka/Context.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Polygon.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Color.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/Vertex.java" />
         <option value="$PROJECT_DIR$/src/info/chris/skorka/BitMap.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Audio.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Boundary.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/CircularBoundary.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Main.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Context.java" />
-        <option value="$PROJECT_DIR$/src/info/chris/skorka/Entity.java" />
       </list>
     </option>
   </component>
@@ -122,8 +254,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -160,6 +292,7 @@
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -216,7 +349,7 @@
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24466951" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24733475" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -224,8 +357,8 @@
       <window_info id="Capture Tool" order="5" />
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" visible="true" weight="0.32827735" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.21776815" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32827735" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.21776815" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3997833" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -250,69 +383,6 @@
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlDemo.java" />
     <entry file="jar://C:/Program Files/Java/jdk-12.0.2/lib/src.zip!/java.base/java/util/Stack.java" />
     <entry file="jar://$PROJECT_DIR$/../lwjgl-release-3.2.2/lwjgl-opengl-sources.jar!/org/lwjgl/opengl/GL11.java" />
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Polygon.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-          <folding>
-            <element signature="method#Polygon#0;class#Polygon#0" />
-            <element signature="method#linesFromVertices#0;class#Polygon#0" />
-            <element signature="method#decomposePolygon#0;class#Polygon#0" />
-            <element signature="method#decomposeCWPolygon#0;class#Polygon#0" />
-            <element signature="method#decomposeConvexPolygon#0;class#Polygon#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Color.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="4" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
-          <folding>
-            <element signature="docComment;method#Color#0;class#Color#0" />
-            <element signature="method#Color#0;class#Color#0" />
-            <element signature="docComment;method#Color#1;class#Color#0" />
-            <element signature="method#Color#1;class#Color#0" />
-            <element signature="docComment;method#Color#2;class#Color#0" />
-            <element signature="method#Color#2;class#Color#0" />
-            <element signature="docComment;method#Color#3;class#Color#0" />
-            <element signature="method#Color#3;class#Color#0" />
-            <element signature="docComment;method#Color#4;class#Color#0" />
-            <element signature="method#Color#4;class#Color#0" />
-            <element signature="docComment;method#getR#0;class#Color#0" />
-            <element signature="docComment;method#getG#0;class#Color#0" />
-            <element signature="docComment;method#getB#0;class#Color#0" />
-            <element signature="docComment;method#getA#0;class#Color#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Vertex.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1292">
-          <caret line="76" column="4" lean-forward="true" selection-start-line="76" selection-start-column="4" selection-end-line="76" selection-end-column="4" />
-          <folding>
-            <element signature="e#1655#1656#0" expanded="true" />
-            <element signature="e#1696#1697#0" expanded="true" />
-            <element signature="e#1721#1722#0" expanded="true" />
-            <element signature="e#1762#1763#0" expanded="true" />
-            <element signature="e#1787#1788#0" expanded="true" />
-            <element signature="e#1828#1829#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="27" column="61" selection-start-line="27" selection-start-column="61" selection-end-line="27" selection-end-column="61" />
-          <folding>
-            <element signature="method#from7Segment#0;class#BitMap#0" />
-            <element signature="method#scale#0;class#BitMap#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Audio.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -369,89 +439,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-680">
-          <caret line="128" column="34" lean-forward="true" selection-start-line="128" selection-start-column="34" selection-end-line="128" selection-end-column="34" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#5237#10011#0" expanded="true" />
-            <element signature="e#10010#10011#0" expanded="true" />
-            <element signature="class#9320:11181" />
-            <element signature="method#onKeyDown#0;class#9320:11181" />
-            <element signature="method#onKeyUp#0;class#9320:11181" />
-            <element signature="class#11203:11457" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="201" selection-start-line="201" selection-end-line="204" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="docComment;method#OpenGlWindow#0;class#OpenGlWindow#0" />
-            <element signature="method#OpenGlWindow#0;class#OpenGlWindow#0" />
-            <element signature="method#init#0;class#OpenGlWindow#0" />
-            <element signature="method#loop#0;class#OpenGlWindow#0" />
-            <element signature="docComment;method#getHeight#0;class#OpenGlWindow#0" />
-            <element signature="docComment;class#KeyboardEventListener#0;class#OpenGlWindow#0" />
-            <element signature="class#KeyboardEventListener#0;class#OpenGlWindow#0" />
-            <element signature="docComment;class#MouseEventListener#0;class#OpenGlWindow#0" />
-            <element signature="class#MouseEventListener#0;class#OpenGlWindow#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Context.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#217#314#0" />
-            <element signature="e#217#445#0" />
-            <element signature="e#583#735#0" />
-            <element signature="e#814#967#0" />
-            <element signature="e#1049#1242#0" />
-            <element signature="e#1344#1477#0" />
-            <element signature="e#1556#1776#0" />
-            <element signature="e#1408#1502#0" />
-            <element signature="e#226#321#0" />
-            <element signature="e#66#175#0" />
-            <element signature="e#66#331#0" />
-            <element signature="e#1464#1702#0" />
-            <element signature="e#1464#2300#0" />
-            <element signature="e#2306#2426#0" />
-            <element signature="e#1484#1611#0" />
-            <element signature="e#1484#1766#0" />
-            <element signature="e#3467#3581#0" />
-            <element signature="e#3467#4001#0" />
-            <element signature="e#4301#4409#0" />
-            <element signature="e#4301#5383#0" />
-            <element signature="e#5389#5552#0" />
-            <element signature="docComment;method#fillTriangle#0;class#Context#0" />
-            <element signature="e#6072#7298#0" />
-            <element signature="docComment;method#polygon#0;class#Context#0" />
-            <element signature="docComment;method#polygon#1;class#Context#0" />
-            <element signature="e#9391#9742#0" />
-            <element signature="docComment;method#bitmap#0;class#Context#0" />
-            <element signature="e#9748#10071#0" />
-            <element signature="docComment;method#matmul#0;class#Context#0" />
-            <element signature="e#10078#10440#0" />
-            <element signature="docComment;method#transform#0;class#Context#0" />
-            <element signature="docComment;method#undoTransform#0;class#Context#0" />
-            <element signature="docComment;method#rotateZ#0;class#Context#0" />
-            <element signature="e#10647#10890#0" />
-            <element signature="docComment;method#translate#0;class#Context#0" />
-            <element signature="docComment;method#translate#1;class#Context#0" />
-            <element signature="e#10978#11202#0" />
-            <element signature="docComment;method#scale#0;class#Context#0" />
-            <element signature="e#11208#11428#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -465,6 +452,144 @@
             <element signature="method#draw#0;class#Entity#0" />
             <element signature="docComment;method#getBoundary#0;class#Entity#0" />
             <element signature="docComment;method#getCircularBoundary#0;class#Entity#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/OpenGlWindow.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="44" selection-end-line="290" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="docComment;method#OpenGlWindow#0;class#OpenGlWindow#0" />
+            <element signature="method#OpenGlWindow#0;class#OpenGlWindow#0" />
+            <element signature="method#init#0;class#OpenGlWindow#0" />
+            <element signature="method#loop#0;class#OpenGlWindow#0" />
+            <element signature="e#6692#6693#0" expanded="true" />
+            <element signature="e#6720#6721#0" expanded="true" />
+            <element signature="e#6908#6909#0" expanded="true" />
+            <element signature="e#6937#6938#0" expanded="true" />
+            <element signature="class#KeyboardEventListener#0;class#OpenGlWindow#0" />
+            <element signature="class#MouseEventListener#0;class#OpenGlWindow#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Context.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="33" selection-end-line="398" />
+          <folding>
+            <element signature="e#772#773#0" expanded="true" />
+            <element signature="e#818#819#0" expanded="true" />
+            <element signature="e#1007#1008#0" expanded="true" />
+            <element signature="e#1054#1055#0" expanded="true" />
+            <element signature="e#1298#1299#0" expanded="true" />
+            <element signature="e#1346#1347#0" expanded="true" />
+            <element signature="e#1524#1525#0" expanded="true" />
+            <element signature="e#1564#1565#0" expanded="true" />
+            <element signature="e#1886#1887#0" expanded="true" />
+            <element signature="e#1945#1946#0" expanded="true" />
+            <element signature="e#2080#2081#0" expanded="true" />
+            <element signature="e#2113#2114#0" expanded="true" />
+            <element signature="e#2252#2253#0" expanded="true" />
+            <element signature="e#2287#2288#0" expanded="true" />
+            <element signature="e#3128#3129#0" expanded="true" />
+            <element signature="e#3188#3189#0" expanded="true" />
+            <element signature="e#6129#6130#0" expanded="true" />
+            <element signature="e#6164#6165#0" expanded="true" />
+            <element signature="e#7762#7763#0" expanded="true" />
+            <element signature="e#7832#7833#0" expanded="true" />
+            <element signature="e#9614#9615#0" expanded="true" />
+            <element signature="e#9697#9698#0" expanded="true" />
+            <element signature="e#10107#10108#0" expanded="true" />
+            <element signature="e#10159#10160#0" expanded="true" />
+            <element signature="e#10327#10328#0" expanded="true" />
+            <element signature="e#10365#10366#0" expanded="true" />
+            <element signature="e#10960#10961#0" expanded="true" />
+            <element signature="e#10994#10995#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Polygon.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" lean-forward="true" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="method#Polygon#0;class#Polygon#0" />
+            <element signature="method#linesFromVertices#0;class#Polygon#0" />
+            <element signature="method#decomposePolygon#0;class#Polygon#0" />
+            <element signature="method#decomposeCWPolygon#0;class#Polygon#0" />
+            <element signature="method#decomposeConvexPolygon#0;class#Polygon#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Color.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="20" selection-end-line="115" />
+          <folding>
+            <element signature="docComment;method#Color#0;class#Color#0" />
+            <element signature="method#Color#0;class#Color#0" />
+            <element signature="docComment;method#Color#1;class#Color#0" />
+            <element signature="method#Color#1;class#Color#0" />
+            <element signature="docComment;method#Color#2;class#Color#0" />
+            <element signature="method#Color#2;class#Color#0" />
+            <element signature="docComment;method#Color#3;class#Color#0" />
+            <element signature="method#Color#3;class#Color#0" />
+            <element signature="docComment;method#Color#4;class#Color#0" />
+            <element signature="method#Color#4;class#Color#0" />
+            <element signature="docComment;method#getR#0;class#Color#0" />
+            <element signature="e#2044#2045#0" expanded="true" />
+            <element signature="e#2068#2069#0" expanded="true" />
+            <element signature="docComment;method#getG#0;class#Color#0" />
+            <element signature="e#2188#2189#0" expanded="true" />
+            <element signature="e#2212#2213#0" expanded="true" />
+            <element signature="docComment;method#getB#0;class#Color#0" />
+            <element signature="e#2330#2331#0" expanded="true" />
+            <element signature="e#2354#2355#0" expanded="true" />
+            <element signature="docComment;method#getA#0;class#Color#0" />
+            <element signature="e#2474#2475#0" expanded="true" />
+            <element signature="e#2498#2499#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Vertex.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="101" selection-end-line="94" />
+          <folding>
+            <element signature="e#1705#1706#0" expanded="true" />
+            <element signature="e#1746#1747#0" expanded="true" />
+            <element signature="e#1848#1849#0" expanded="true" />
+            <element signature="e#1889#1890#0" expanded="true" />
+            <element signature="e#1991#1992#0" expanded="true" />
+            <element signature="e#2032#2033#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/BitMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="7" lean-forward="true" selection-end-line="47" />
+          <folding>
+            <element signature="method#from7Segment#0;class#BitMap#0" />
+            <element signature="method#scale#0;class#BitMap#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="31" column="58" selection-start-line="31" selection-start-column="58" selection-end-line="31" selection-end-column="58" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>

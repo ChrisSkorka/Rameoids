@@ -1,5 +1,8 @@
 package info.chris.skorka;
 
+/**
+ * Provides static methods for generating boolean bitmaps.
+ */
 public class BitMap{
 
     /**

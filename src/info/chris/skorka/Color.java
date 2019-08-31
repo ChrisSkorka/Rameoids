@@ -1,5 +1,8 @@
 package info.chris.skorka;
 
+/**
+ * Represents a color in terms of ARGB floating point values
+ */
 public class Color {
 
     private float r, g, b, a;
