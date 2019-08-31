@@ -9,28 +9,59 @@ public class Context {
     private Stack<double[][]> transformations = new Stack<>();
     private Color fill, stroke;
 
+    /**
+     * Create drawing context object to draw into a window
+     * Starts with the default transformation (identity)
+     * @param openGlWindow window to draw onto
+     */
     public Context(OpenGlWindow openGlWindow){
         this.openGlWindow = openGlWindow;
         transformations.push(new double[][]{{1,0,0,0},{0,1,0,0},{0,0,1,0},{0,0,0,1}});
     }
 
-
+    /**
+     * Get the width of the display.
+     * Note this is the number of pixels of the game not the screen
+     * @return width of the display
+     */
     public int getWidth(){
         return openGlWindow.getWidth();
     }
 
+    /**
+     * Get the height of the display.
+     * Note this is the number of pixels of the game not the screen
+     * @return height of the display
+     */
     public int getHeight(){
         return openGlWindow.getHeight();
     }
 
+    /**
+     * Sets the drawing color for the internal pixel() function
+     * @param color color for pixel() to use
+     * @return bool false if no color is set (if c==null) and true otherwise
+     */
     private boolean color(Color color){
         return openGlWindow.color(color);
     }
 
+    /**
+     * paints an individual pixel with the color set by color()
+     * @param x x coordinate
+     * @param y y coordinate
+     */
     private void pixel(int x, int y){
         openGlWindow.pixel(x, y);
     }
 
+    /**
+     * Clears the screen, should be called at the start of each frame.
+     * @param red 0.0 - 1.0 red value
+     * @param green 0.0 - 1.0 green value
+     * @param blue 0.0 - 1.0 blue value
+     * @param alpha 0.0 - 1.0 alpha value
+     */
     public void clear(float red, float green, float blue, float alpha){
         openGlWindow.clear(red, green, blue, alpha);
     }
@@ -61,7 +92,6 @@ public class Context {
         pixel(v.getX(), v.getY());
     }
 
-
     /**
      * Paints a rectangle with the fill and stroke colors.
      * @param x1 x coordinate of vertex 1
@@ -91,36 +121,58 @@ public class Context {
         paintLine(a.transform(transformations.lastElement()), b.transform(transformations.lastElement()));
     }
 
+    /**
+     * Paints the actual pixels for a line from Vertex a to b.
+     * Note this assumes the transformation has already been applied to the vertices
+     * @param a starting vertex
+     * @param b ending vertex
+     */
     private void paintLine(Vertex a, Vertex b){
 
         color(this.stroke);
 
+        // get coordinates
         int x1 = a.getX();
         int y1 = a.getY();
         int x2 = b.getX();
         int y2 = b.getY();
 
+        // get differences
         int xd = x2 - x1;
         int yd = y2 - y1;
 
+        // calculate number of steps required
         float s = Math.abs(xd) > Math.abs(yd) ? Math.abs(xd) : Math.abs(yd);
         float xs = xd / s;
         float ys = yd / s;
 
+        // paint pixels
         for(int i = 0; i <= s; i++)
             pixel(Math.round(x1 + xs * i), Math.round(y1 + ys * i));
     }
 
+    /**
+     * Draws a circle with a given center vertex and radius
+     * Note only the center point is transformed according the the stored transformation
+     * The shape or size of the circle is NOT affected by the transformation
+     * @param vertex center Vertex
+     * @param r Radius
+     */
     public void circle(Vertex vertex, int r){
+
+        // transform center point
         vertex = vertex.transform(transformations.lastElement());
         int x = vertex.getX();
         int y = vertex.getY();
 
+        // number of points along and octet of the circle
         int n_points_octant = (int)Math.ceil(Math.sqrt(2) * r / 2) + 1;
 
+        // for each pixel within one octet (octet is mirrored 3 times to fill the circle)
         for(int i = 0; i < n_points_octant; i++){
             int j = (int) Math.round(Math.sqrt(r * r - i * i));
 
+            // fill entire circle
 //            if(this.fill != null) {
 //                color(this.fill);
 //                for (int k = -i; k <= i; k++) {
@@ -133,6 +185,7 @@ public class Context {
 //                }
 //            }
 
+            // draw outline of all 8 octets
             if(color(this.stroke)){
                 pixel(x+i,y+j); pixel(x-i,y+j);
                 pixel(x+j,y+i); pixel(x-j,y+i);
@@ -154,8 +207,14 @@ public class Context {
         polygon(v0, v1, v2);
     }
 
-
-    public void fillTriangle(Vertex _v0, Vertex _v1, Vertex _v2){
+    /**
+     * Fills a triangle, vertices should be defined in a clock wise order
+     * This does not paint the outline
+     * @param _v0 Vertex 1
+     * @param _v1 Vertex 2
+     * @param _v2 Vertex 3
+     */
+    private void fillTriangle(Vertex _v0, Vertex _v1, Vertex _v2){
 
         _v0 = _v0.transform(transformations.lastElement());
         _v1 = _v1.transform(transformations.lastElement());
@@ -187,67 +246,18 @@ public class Context {
         }
     }
 
-//    public void polygon(Vertex... vertices){
-//
-//        Vertex[][] lines = new Vertex[vertices.length][2];
-//        for(int i = 1; i < vertices.length; i++){
-//            Vertex a = vertices[i-1];
-//            Vertex b = vertices[i];
-//            if(b.getY() < a.getY()){
-//                Vertex t = a;
-//                a = b;
-//                b = t;
-//            }
-//            lines[i][0] = a;
-//            lines[i][1] = b;
-//        }
-//        Vertex a = vertices[vertices.length-1];
-//        Vertex b = vertices[0];
-//        if(b.getY() < a.getY()){
-//            Vertex t = a;
-//            a = b;
-//            b = t;
-//        }
-//        lines[0][0] = a;
-//        lines[0][1] = b;
-//
-//        if(color(this.fill)){
-//
-//            Boundary boundary = new Boundary(vertices);
-//
-//            for(int y = boundary.bottom(); y <= boundary.top(); y++){
-//                boolean draw = false;
-//                for(int x = boundary.left(); x <= boundary.right(); x++){
-//                    boolean intersect = false;
-//                    for(Vertex[] line : lines){
-//                        boolean is_between_y = line[0].getY() <= y && y <= line[1].getY();
-//                        int yd = line[1].getY() - line[0].getY();
-//                        int xd = line[1].getX() - line[0].getX();
-//                        double ratio = yd == 0 ? 0 : xd / yd;
-//                        double xi = line[0].getX() + ratio * (y - line[0].getY());
-//                        if(is_between_y && x >= xi){
-//                            draw = !draw;
-//                            intersect = true;
-//                        }
-//                    }
-//                    if(draw)
-//                        pixel(x, y);
-//                }
-//            }
-//
-//            // rect(x1, y1, x2, y2);
-//        }
-//
-//        if(color(this.stroke)){
-//            for(Vertex[] line : lines)
-//                line(line[0], line[1]);
-//        }
-//    }
-
+    /**
+     * Draw a polygon as defined by the vertices
+     * @param vertices array of vertices
+     */
     public void polygon(Vertex... vertices){
         polygon(new Polygon(this.fill, this.stroke, vertices));
     }
 
+    /**
+     * Draw a polygon as defined by the polygon object
+     * @param polygon The polygon to be drawn
+     */
     public void polygon(Polygon polygon){
         fill(polygon.fill);
         stroke(polygon.stroke);
@@ -262,6 +272,10 @@ public class Context {
         }
     }
 
+    /**
+     * Draw a bitmap where each pixel is painted with the fill color if its corresponding value in the bitmap is true
+     * @param bitmap bitmap to be drawn
+     */
     public void bitmap(boolean[][] bitmap){
         if (color(fill)) {
             for(int y = 0; y < bitmap.length; y++){
@@ -273,7 +287,13 @@ public class Context {
         }
     }
 
-
+    /**
+     * Perform a matrix multiplication
+     * a_n_cols must equal b_n_rows
+     * @param a Matrix a
+     * @param b Matrix b
+     * @return
+     */
     private static double[][] matmul(double[][] a, double[][] b){
         double[][] m = new double[b.length][a[0].length];
 
@@ -287,14 +307,26 @@ public class Context {
         return m;
     }
 
+    /**
+     * Apply a new transformation, new transformation matrix is placed on the stack
+     * This transformation is applied ontop of all previous transformations
+     * @param matrix 4x4 transformation matrix
+     */
     public void transform(double[][] matrix){
         transformations.push(matmul(matrix, transformations.lastElement()));
     }
 
+    /**
+     * Undo the last transformation (remove from the transformation stack)
+     */
     public void undoTransform(){
         transformations.pop();
     }
 
+    /**
+     * Apply a rotation around the z axis transformation
+     * @param r Angle in radians to rotate about the z axis
+     */
     public void rotateZ(double r){
         transform(new double[][]{
                 {Math.cos(r), Math.sin(r), 0, 0},
@@ -304,10 +336,21 @@ public class Context {
         });
     }
 
+    /**
+     * Applies a translation transformation, translates 0.0 along the z axis
+     * @param x X axis translation
+     * @param y Y axis translation
+     */
     public void translate(double x, double y){
         translate(x, y, 0);
     }
 
+    /**
+     * Applies a translation transformation
+     * @param x X axis translation
+     * @param y Y axis translation
+     * @param z Z axis translation
+     */
     public void translate(double x, double y, double z){
         transform(new double[][]{
                 {1, 0, 0, x},
@@ -317,6 +360,12 @@ public class Context {
         });
     }
 
+    /**
+     * Applies a scaling transformation
+     * @param x X axis scale
+     * @param y Y axis scale
+     * @param z Z axis scale
+     */
     public void scale(double x, double y, double z){
         transform(new double[][]{
                 {x, 0, 0, 0},

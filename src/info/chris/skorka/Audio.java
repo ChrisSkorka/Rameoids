@@ -9,6 +9,10 @@ public class Audio {
 
     Clip clip;
 
+    /**
+     * Creates a Audio object with a audio file loaded and ready to play
+     * @param fileName File name with in resources
+     */
     public Audio(String fileName){
 
         URL url = getClass().getResource(fileName);
@@ -27,6 +31,9 @@ public class Audio {
         }
     }
 
+    /**
+     * Plays the sound. If it is already playing it stops, resets and plays it
+     */
     public void play(){
         if(clip != null){
             clip.stop();

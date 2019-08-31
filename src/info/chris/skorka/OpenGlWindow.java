@@ -6,7 +6,6 @@ import org.lwjgl.system.*;
 
 import java.nio.*;
 import java.lang.*;
-import java.util.Stack;
 
 import static org.lwjgl.glfw.Callbacks.*;
 import static org.lwjgl.glfw.GLFW.*;
@@ -29,6 +28,16 @@ public class OpenGlWindow {
     private KeyboardEventListener keyboardEventListener;
     private MouseEventListener mouseEventListener;
 
+    /**
+     * Creates window with OpenGL bindings
+     * @param width N of in-game pixels wide
+     * @param height N of in-game pixels high
+     * @param scale Positive integer scaling factor, each in-game pixel is displayed as a scale x scale rectangle
+     * @param title Title of the window
+     * @param drawEventListener graphics related event callbacks
+     * @param keyboardEventListener keyboard related event callbacks
+     * @param mouseEventListener mouse related event callbacks
+     */
     public OpenGlWindow(int width, int height, int scale, String title, DrawEventListener drawEventListener, KeyboardEventListener keyboardEventListener, MouseEventListener mouseEventListener){
 
         this.width = width;
@@ -38,7 +47,6 @@ public class OpenGlWindow {
         this.drawEventListener = drawEventListener;
         this.keyboardEventListener = keyboardEventListener;
         this.mouseEventListener = mouseEventListener;
-//        this.open();
     }
 
     /**
@@ -171,20 +179,30 @@ public class OpenGlWindow {
         }
     }
 
+    /**
+     * Get the width of the display.
+     * Note this is the number of pixels of the game not the screen
+     * @return width of the display
+     */
     public int getWidth(){
         return width;
     }
 
+    /**
+     * Get the height of the display.
+     * Note this is the number of pixels of the game not the screen
+     * @return height of the display
+     */
     public int getHeight(){
         return height;
     }
 
     /**
-     * Clears teh screen, should be called at the start of each frame.
-     * @param red 0-1 red value
-     * @param green 0-1 green value
-     * @param blue 0-1 blue value
-     * @param alpha 0-1 alpha value
+     * Clears the screen, should be called at the start of each frame.
+     * @param red 0.0 - 1.0 red value
+     * @param green 0.0 - 1.0 green value
+     * @param blue 0.0 - 1.0 blue value
+     * @param alpha 0.0 - 1.0 alpha value
      */
     public void clear(float red, float green, float blue, float alpha){
         glClearColor(red, green, blue, alpha);
@@ -230,18 +248,36 @@ public class OpenGlWindow {
     public static abstract class DrawEventListener{
         /**
          * Called on each redraw of the window.
-         * @param context OpenGLWindow object to draw onto.
+         * @param context Context object to draw onto.
          * @param millis time in millis since the window opened.
          */
         public abstract void onDraw(Context context, long millis, long delta);
     }
 
+    /**
+     * Keyboard event callbacks
+     */
     public static abstract class KeyboardEventListener{
+
+        /**
+         * On key down/pressed callback
+         * @param key key code as defined in GLFW
+         * @see org.lwjgl.glfw.GLFW
+         */
         public abstract void onKeyDown(int key);
+
+        /**
+         * On key up/released callback
+         * @param key key code as defined in GLFW
+         * @see org.lwjgl.glfw.GLFW
+         */
         public abstract void onKeyUp(int key);
 
     }
 
+    /**
+     * Mouse event callbacks
+     */
     public static abstract class MouseEventListener{
         public abstract void onMouseDown();
         public abstract void onMouseUp();

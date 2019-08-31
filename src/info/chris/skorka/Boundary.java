@@ -4,6 +4,11 @@ public class Boundary {
 
     private int x1, x2, y1, y2;
 
+    /**
+     * Creates a 2D boundary from an array of vertices.
+     * Find min and max x and y values from vertices to construct minimum surrounding rectangular bounding box
+     * @param vertices array of vertices to be contained within bounding box
+     */
     public Boundary(Vertex... vertices){
 
         x1 = vertices[0].getX();
@@ -22,7 +27,11 @@ public class Boundary {
                 y2 = v.getY();
         }
     }
-
+    /**
+     * Creates a 2D boundary from an array of boundaries.
+     * Find min and max left, top, right and bottom values from boundaries to construct minimum surrounding rectangular bounding box
+     * @param boundaries array of boundaries to be contained within bounding box
+     */
     public Boundary(Boundary... boundaries){
 
         x1 = boundaries[0].left();
@@ -42,38 +51,73 @@ public class Boundary {
         }
     }
 
-    public Boundary(int x1, int y1, int x2, int y2){
-        this.x1 = x1;
-        this.y1 = y1;
-        this.x2 = x2;
-        this.y2 = y2;
+    /**
+     * Create rectangular boundary from the coordinates
+     * @param left min x value
+     * @param bottom min y value
+     * @param right max x value
+     * @param top max y value
+     */
+    public Boundary(int left, int bottom, int right, int top){
+        this.x1 = left;
+        this.y1 = bottom;
+        this.x2 = right;
+        this.y2 = top;
     }
 
-    public int left() {
-        return x1;
-    }
-
-    public int right() {
-        return x2;
-    }
-
-    public int bottom() {
-        return y1;
-    }
-
-    public int top() {
-        return y2;
-    }
-
+    /**
+     * Check if this boundary intersects another boundary.
+     * @param b other boundary
+     * @return true of this and b intersect
+     */
     public boolean intersects(Boundary b){
         return Math.max(x1, b.x1) < Math.min(x2, b.x2) && Math.max(y1, b.y1) < Math.min(y2, b.y2);
     }
 
+    /**
+     * Check if this boundary is completely contained with in another boundary
+     * @param b other boundary
+     * @return true of this is completely and entirely inside of b
+     */
     public boolean inside(Boundary b){
         return x1 >= b.x1 && x2 <= b.x2 && y1 >= b.y1 && y2 <= b.y2;
     }
 
+    /**
+     * Translates the bounding box by the values
+     * @param x Amount to translate by along the x axis
+     * @param y Amount to translate by along the y axis
+     * @return new Boundary object with translated boundary values
+     */
     public Boundary translate(int x, int y){
         return new Boundary(x1 + x, y1 + y, x2 + x, y2 + y);
+    }
+
+    /**
+     * @return left coordinate
+     */
+    public int left() {
+        return x1;
+    }
+
+    /**
+     * @return right coordinate
+     */
+    public int right() {
+        return x2;
+    }
+
+    /**
+     * @return bottom coordinate
+     */
+    public int bottom() {
+        return y1;
+    }
+
+    /**
+     * @return top coordinate
+     */
+    public int top() {
+        return y2;
     }
 }

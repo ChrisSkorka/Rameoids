@@ -2,6 +2,11 @@ package info.chris.skorka;
 
 public class BitMap{
 
+    /**
+     * Generate 4x7 boolean bitmap from 7 segment boolean array
+     * @param s 7 segment configuration as (top, top right, bottom right, bottom, bottom left, top left, middle)
+     * @return boolean[7][4] bitmap
+     */
     public static boolean[][] from7Segment(boolean[] s){
         return new boolean[][]{
                 {s[0]||s[5], s[0], s[0], s[0]||s[1]},
@@ -14,7 +19,17 @@ public class BitMap{
         };
     }
 
+    /**
+     * Scales a boolean bitmap by a positive integer scaling factor
+     * @param scale integer scaling value
+     * @param b 2D boolean array bitmap
+     * @return boolean[nrows*scale][ncols*scale] scaled bitmap
+     */
     public static boolean[][] scale(int scale, boolean[][] b){
+
+        if(scale <= 1)
+            return b;
+
         boolean bitmap[][] = new boolean[b.length * scale][b[0].length * scale];
 
         for(int y = 0; y < bitmap.length; y++) {
