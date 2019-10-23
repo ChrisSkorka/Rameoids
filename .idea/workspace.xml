@@ -5,14 +5,7 @@
     <option name="CUSTOM_SCOPE_NAME" value="Module 'Asteroids'" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22b2c97b-eac8-486d-b7f7-85d68efd440b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/info/chris/skorka/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FractalLandscape/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../FractalLandscape/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FractalLandscape/src/info/chris/skorka/FractalLandscape.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FractalLandscape/src/info/chris/skorka/FractalLandscape.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FractalLandscape/src/info/chris/skorka/Mesh.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FractalLandscape/src/info/chris/skorka/Mesh.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../FractalLandscape/src/info/chris/skorka/Noise.java" beforeDir="false" afterPath="$PROJECT_DIR$/../FractalLandscape/src/info/chris/skorka/Noise.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../UML/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../UML/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="22b2c97b-eac8-486d-b7f7-85d68efd440b" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,7 +21,7 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="238">
+            <state relative-caret-position="527">
               <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -152,7 +145,7 @@
     </replaceStrings>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
@@ -175,7 +168,7 @@
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="30" />
     <option name="y" value="90" />
     <option name="width" value="2100" />
@@ -187,45 +180,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Asteroid" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Asteroid" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Asteroid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Asteroid" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Asteroid" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="skorka" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/res" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lwjgl-release-3.2.2" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="restartRequiresConfirmation" value="false" />
-    <property name="settings.editor.selected.configurable" value="preferences.intentionPowerPack" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -280,9 +247,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25266525" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -309,6 +275,11 @@
       <window_info anchor="right" id="Capture Analysis" order="6" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
     </layout>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/.." />
+    </ignored-roots>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/VulkanDemo.java" />
@@ -365,13 +336,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$PROJECT_DIR$/../lwjgl-release-3.2.2/lwjgl-glfw-sources.jar!/org/lwjgl/glfw/GLFW.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1496">
-          <caret line="27" column="13" selection-start-line="27" selection-start-column="13" selection-end-line="27" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="jar://$PROJECT_DIR$/../lwjgl-release-3.2.2/lwjgl-glfw-sources.jar!/org/lwjgl/glfw/GLFW.java" />
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Entity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -391,7 +356,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/info/chris/skorka/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
+        <state relative-caret-position="527">
           <caret line="31" column="53" selection-start-line="31" selection-start-column="53" selection-end-line="31" selection-end-column="53" />
           <folding>
             <element signature="imports" expanded="true" />
